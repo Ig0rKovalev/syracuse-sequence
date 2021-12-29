@@ -12,13 +12,13 @@ def check_positive(value):
     """
     ivalue = int(value)
     if ivalue <= 0:
-        raise argparse.ArgumentTypeError("%s is an invalid positive\
-                                         int value" % value)
+        raise argparse.ArgumentTypeError(f"{value} is an invalid" +
+                                         " positive int value")
     return ivalue
 
 
-parser = argparse.ArgumentParser(description="Монотонно убывающие и\
-                                              возрастающие последовательности")
+parser = argparse.ArgumentParser(description="Монотонно убывающие и " +
+                                             "возрастающие последовательности")
 parser.add_argument("n", type=check_positive)
 args = parser.parse_args()
 
